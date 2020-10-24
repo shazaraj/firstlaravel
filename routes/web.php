@@ -45,4 +45,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes(["verify"=>true]);
 
+//login with facebook
+
+    Route::get('/redirect/{service}','SocialController@redirect');
+
+    Route::get('/callback/{service}','SocialController@callback');
+
 Route::get('/home', 'HomeController@index')->name('home') ->middleware('verified');
