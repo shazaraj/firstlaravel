@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class Mail extends Mailable
+class MailNotify extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -16,9 +16,10 @@ class Mail extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public $details;
+    public function __construct($data)
     {
-        //
+        $this -> details = $data;
     }
 
     /**
@@ -28,6 +29,6 @@ class Mail extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->view('emails.mailUser');
     }
 }

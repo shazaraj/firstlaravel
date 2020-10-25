@@ -6,6 +6,7 @@
     <section class="page-section bg-primary text-white mb-0" id="about">
         <div class="container">
             <!-- About Section Heading-->
+            <br>
             <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
             <!-- Icon Divider-->
             <div class="divider-custom divider-light">

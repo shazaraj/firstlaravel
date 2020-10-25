@@ -5,6 +5,8 @@
     <!-- Contact Section-->
     <section class="page-section" id="contact">
         <div class="container">
+
+            <br>
             <!-- Contact Section Heading-->
             <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Us</h2>
             <!-- Icon Divider-->

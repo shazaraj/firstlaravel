@@ -11,44 +11,45 @@
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
 Route::get('/', function () {
     return view('landing');
 });
 
 
-//Route::get('index','AdminController@index');
-
-Route::get('/about', function () {
-    return view('about');
-});
+    Route::get('/about', function () {return view('about');});
 
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+    Route::get('/contact', function () {return view('contact');});
 
-Route::get('/home', function () {
-    return view('home');
+    Route::get('/home', function () {return view('home');});
+
+    Route::get('/landing', function () {return view('landing');});
+
+    Auth::routes();
+
+    Route::get('/home', 'HomeController@index')->name('home');
+
+    Auth::routes(["verify"=>true]);
+
+    //login with facebook
+
+        Route::get('/redirect/{service}','SocialController@redirect');
+
+        Route::get('/callback/{service}','SocialController@callback');
+
+    Route::get('/home', 'HomeController@index')->name('home') ->middleware('verified');
+
+
+    Route::get('offersService','CrudController@offers');
+
+
+    Route::group(['prefix'=>'offers'],function (){
+
+        Route::get('create','CrudController@create');
+
+        Route::post('store','CrudController@store') -> name('offers.store');
+
+        Route::get('update','CrudController@update');
+
+
     });
-
-    Route::get('/landing', function () {
-    return view('landing');
-    });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes(["verify"=>true]);
-
-//login with facebook
-
-    Route::get('/redirect/{service}','SocialController@redirect');
-
-    Route::get('/callback/{service}','SocialController@callback');
-
-Route::get('/home', 'HomeController@index')->name('home') ->middleware('verified');

@@ -6,9 +6,10 @@
         <header class="masthead bg-primary text-white text-center">
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Avatar Image-->
+                <br>
                 <img class="masthead-avatar mb-5" src="assets/img/avatars.png" alt="" />
                 <!-- Masthead Heading-->
-                <h1 class="masthead-heading text-uppercase mb-0">Hello world!</h1>
+                <h1 class="masthead-heading text-uppercase mb-0">Lara Web Market</h1>
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
@@ -18,7 +19,7 @@
 {{--                @if($obj->name =='A')--}}
 {{--                @endif--}}
                 <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light mb-0">Graphic Artist - Web Designer - Android developer</p>
+                <p class="masthead-subheading font-weight-light mb-0">Sales - Shopping - Get Offers</p>
             </div>
         </header>
 
