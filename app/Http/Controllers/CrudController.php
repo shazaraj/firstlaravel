@@ -81,6 +81,9 @@ class CrudController extends Controller
     }
     public function getOffers(){
 
-     return  Offer::get();
+        $offers = Offer::all(['id','name','price','details','image']);
+//        $offers = Offer::all();
+     return  view('offers.data', compact('offers'));
+//        return $offers;
     }
 }

@@ -51,5 +51,7 @@ Route::get('/', function () {
 
         Route::get('update','CrudController@update');
 
+        Route::get('data','CrudController@getOffers');
+
 
     });

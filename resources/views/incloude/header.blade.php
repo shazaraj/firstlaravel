@@ -22,9 +22,10 @@
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                Offers
             </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" href="/offers/create">create offers</a>
                 <a class="dropdown-item" href="/offers/update">update offers</a>
+                <a class="dropdown-item" href="/offers/data">get all offers</a>
             </div>
         </div>
     </nav>
