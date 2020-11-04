@@ -19,24 +19,24 @@
     </header>
     <body>
 
-    <form method="POST" action="{{url('offers/store')}}" >
+    <form method="POST" action="{{url('offers/update')}}" >
 
         @csrf
         <div class="form-group" >
             <b><label for="name">offer name</label></b>
-            <input type="text" class="form-control" name="name" id="name" placeholder="name">
+            <input type="text" class="form-control" name="name" id="name" value="{{$offer->name}}">
         </div>
         <div class="form-group">
             <label for="price">offer price</label>
-            <input type="number" class="form-control" name="price" id="name" placeholder="price">
+            <input type="number" class="form-control" name="price" id="name" value="{{$offer->price}}">
         </div>
         <div class="form-group">
             <label for="details">offer details</label>
-            <input type="text" class="form-control" name="details" id="details" placeholder="details">
+            <input type="text" class="form-control" name="details" id="details" value="{{$offer->details}}">
         </div>
         <div class="form-group">
             <label for="image">offer image</label>
-            <input type="text" class="form-control" name="image" id="image" placeholder="image">
+            <img  style="width: 90px; height: 90px;" src="{{asset('images/offers/'.$offer->image)}}">
         </div>
 
         <button type="submit" class="btn btn-primary" align="center">update offer</button>
@@ -46,5 +46,3 @@
     </body>
 
 @stop
-
-

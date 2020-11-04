@@ -49,7 +49,12 @@ Route::get('/', function () {
 
         Route::post('store','CrudController@store') -> name('offers.store');
 
-        Route::get('update','CrudController@update');
+
+        Route::get('edit/{offer_id}', 'CrudController@edit');
+
+        Route::post('update/{offer_id}', 'CrudController@UpdateOffer')->name('offers.update');
+
+        Route::get('delete/{offer_id}', 'CrudController@delete')->name('offers.delete');
 
         Route::get('data','CrudController@getOffers');
 
