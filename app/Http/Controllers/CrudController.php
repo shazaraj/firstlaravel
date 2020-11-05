@@ -45,7 +45,7 @@ class CrudController extends Controller
                 'image'=> $request -> image,
                 'details' => $request -> details,
             ]);
-            return redirect() ->back() ->with(['success' => ' تمت الإضافة بنجاح']);
+            return redirect('offers/data')->with(['create' => ' تمت الإضافة بنجاح']);
 
         }
 
@@ -87,10 +87,26 @@ class CrudController extends Controller
 
     }
 
-    public function UpdateOffer(){
+    public function update($offer_id){
 
-        $id = Offer::get(['id']);
-        return view('offers.update',compact('id'));
+
+        $offer = Offer::find($offer_id);
+        Offer::updated([
+            'name' => $offer->name,
+            'price'=> $offer->price,
+            'image'=> $offer->image,
+            'details' => $offer->details,
+        ]);
+        return redirect('offers/data') ->with(['update' => ' تم التعديل بنجاح']);
+//
+//        $offer->name =  $offer->get('name');
+//        $offer->price =  $offer->get('price');
+//        $offer->details =  $offer->get('details');
+//        $offer->image =  $offer->get('image');
+//
+//        $offer->save();
+
+//        return view('offers.data',compact('offer_id'))>with('success', 'Contact updated!');
 
     }
     public function edit($offer_id){
@@ -115,13 +131,12 @@ class CrudController extends Controller
             $offer = Offer::find($offer_id);   // Offer::where('id','$offer_id') -> first();
 
             if (!$offer)
-                return redirect()->back()->with(['error' => __('messages.offer not exist')]);
+                return redirect()->back()->with(['error' => __(' العنصر المحدد غير موجود')]);
 
             $offer->delete();
 
             return redirect()
-                ->back()
-                ->with(['success' => __('messages.offer deleted successfully')]);
+                ->back()->with(['delete' => __(' تم الحذف بنجاح')]);
 
     }
 }

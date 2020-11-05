@@ -24,7 +24,7 @@
             </button>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" href="/offers/create">create offers</a>
-                <a class="dropdown-item" href="/offers/update">update offers</a>
+{{--                <a class="dropdown-item" href="/offers/update">update offers</a>--}}
                 <a class="dropdown-item" href="/offers/data">get all offers</a>
             </div>
         </div>

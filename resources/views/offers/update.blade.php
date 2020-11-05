@@ -19,7 +19,12 @@
     </header>
     <body>
 
-    <form method="POST" action="{{url('offers/update')}}" >
+    @if(Session::has('update'))
+        <div class="alert alert-success" role="alert" align="center">
+            {{Session::get('update')}}
+        </div>
+    @endif
+    <form method="POST"  action="{{route('offers.update',$offer->id)}}" >
 
         @csrf
         <div class="form-group" >
@@ -28,7 +33,7 @@
         </div>
         <div class="form-group">
             <label for="price">offer price</label>
-            <input type="number" class="form-control" name="price" id="name" value="{{$offer->price}}">
+            <input type="number" class="form-control" name="price" id="price" value="{{$offer->price}}">
         </div>
         <div class="form-group">
             <label for="details">offer details</label>
@@ -39,7 +44,7 @@
             <img  style="width: 90px; height: 90px;" src="{{asset('images/offers/'.$offer->image)}}">
         </div>
 
-        <button type="submit" class="btn btn-primary" align="center">update offer</button>
+        <button type="submit" class="btn btn-primary badge-success" align="center">update offer</button>
     </form>
 
 

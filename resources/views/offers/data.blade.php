@@ -35,18 +35,27 @@
 {{--        <div class="alert alert-danger">--}}
 {{--            {{Session::get('error')}}--}}
 {{--        </div>--}}
-{{--    @endif--}}
-
+                    {{--    @endif--}}
+            @if(Session::has('create'))
+                <div class="alert alert-secondary" role="alert" align="center">
+                    {{Session::get('create')}}
+                </div>
+            @endif
+            @if(Session::has('update'))
+                <div class="alert alert-success" role="alert" align="center">
+                    {{Session::get('update')}}
+                </div>
+             @endif
+            @if(Session::has('delete'))
+                <div class="alert alert-danger" role="alert" align="center">
+                    {{Session::get('delete')}}
+                </div>
+            @endif
     <table class="table">
         <thead>
         <tr>
             <th scope="col">#</th>
-{{--            <th scope="col">{{__('messages.Offer Name')}}</th>--}}
-{{--            <th scope="col">{{__('messages.Offer Price')}}</th>--}}
-{{--            <th scope="col">{{__('messages.Offer details')}}</th>--}}
-{{--            <th scope="col">{{__('messages.Offer image')}}</th>--}}
-{{--            <th scope="col">{{__('messages.operation')}}</th>--}}
-            <th scope="col">offer name</th>
+           <th scope="col">offer name</th>
             <th scope="col">offer price</th>
             <th scope="col">offer details</th>
             <th scope="col">offer image</th>

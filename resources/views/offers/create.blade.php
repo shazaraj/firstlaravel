@@ -6,7 +6,7 @@
     <!-- Masthead-->
     <header class="masthead bg-primary text-white text-center">
         <div class="container d-flex align-items-center flex-column">
-            <h1 class="masthead-heading text-uppercase mb-0">create offers</h1>
+            <h1 class="masthead-heading text-uppercase mb-0">add new offers</h1>
             <!-- Icon Divider-->
             <div class="divider-custom divider-light">
                 <div class="divider-custom-line"></div>
@@ -18,9 +18,9 @@
         </div>
     </header>
     <body>
-    @if(Session::has('success'))
-            <div class="alert alert-success" role="alert" align="center">
-                {{Session::get('success')}}
+    @if(Session::has('create'))
+            <div class="alert alert-secondary" role="alert" align="center">
+                {{Session::get('create')}}
             </div>
     @endif
             <br>
@@ -56,7 +56,7 @@
             @enderror
         </div>
 
-        <button type="submit" class="btn btn-primary" align="center">save offer</button>
+        <button type="submit" class="btn btn-success" align="center">save offer</button>
     </form>
 
 

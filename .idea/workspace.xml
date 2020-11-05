@@ -24,6 +24,8 @@
     <list default="true" id="db01532d-640a-487a-bc72-fd6551be4850" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/incloude/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/incloude/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/offers/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/offers/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/offers/data.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/offers/data.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/offers/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/offers/update.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
@@ -202,7 +204,8 @@
       <workItem from="1603700608183" duration="646000" />
       <workItem from="1603739162056" duration="546000" />
       <workItem from="1604230589465" duration="74000" />
-      <workItem from="1604509767317" duration="11538000" />
+      <workItem from="1604509767317" duration="11921000" />
+      <workItem from="1604578926276" duration="5352000" />
     </task>
     <servers />
   </component>
@@ -226,10 +229,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="460" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1603656794851" />
-    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603547262534">
+    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604579521864">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1603547262534" />
+    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1604579521864" />
     <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1604230660612">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -242,9 +245,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1603622729639" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1603621469777">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1604582058918">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1603621469777" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1604582058918" />
   </component>
 </project>

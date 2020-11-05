@@ -52,7 +52,7 @@ Route::get('/', function () {
 
         Route::get('edit/{offer_id}', 'CrudController@edit');
 
-        Route::post('update/{offer_id}', 'CrudController@UpdateOffer')->name('offers.update');
+        Route::post('update/{offer_id}', 'CrudController@update')->name('offers.update');
 
         Route::get('delete/{offer_id}', 'CrudController@delete')->name('offers.delete');
 
