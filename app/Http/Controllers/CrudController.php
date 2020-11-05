@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\OfferRequest;
 use App\Models\Offer;
+use App\Traits\OfferTraits;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class CrudController extends Controller
 {
 
+    use OfferTraits;
     public function __construct()
     {
 
@@ -39,15 +41,20 @@ class CrudController extends Controller
 //            return redirect() ->back() ->withErrors($validator) ->withInputs($request ->all());
 //        }
 //        else{
+
+        $file_name = $this ->saveImage($request ->image,'images/offers');
+
+
             Offer::create([
                 'name' => $request -> name,
                 'price'=> $request -> price,
-                'image'=> $request -> image,
+                'image'=> $file_name,
                 'details' => $request -> details,
             ]);
             return redirect('offers/data')->with(['create' => ' تمت الإضافة بنجاح']);
 
         }
+
 
 
 
@@ -87,17 +94,29 @@ class CrudController extends Controller
 
     }
 
-    public function update($offer_id){
+    public function update(OfferRequest $request, $offer_id){
+            //validation
 
+            // chek if offer exists
 
-        $offer = Offer::find($offer_id);
-        Offer::updated([
-            'name' => $offer->name,
-            'price'=> $offer->price,
-            'image'=> $offer->image,
-            'details' => $offer->details,
-        ]);
+            $offer = Offer::find($offer_id);
+            if (!$offer)
+                return redirect()->back();
+
+            //update data
+
+            $offer->update($request->all());
+
         return redirect('offers/data') ->with(['update' => ' تم التعديل بنجاح']);
+
+            /*  $offer->update([
+                  'name_ar' => $request->name_ar,
+                  'name_en' => $request->name_en,
+                  'price' => $request->price,
+              ]);*/
+
+
+//        return redirect('offers/data') ->with(['update' => ' تم التعديل بنجاح']);
 //
 //        $offer->name =  $offer->get('name');
 //        $offer->price =  $offer->get('price');
@@ -114,7 +133,7 @@ class CrudController extends Controller
         // Offer::findOrFail($offer_id);
         $offer = Offer::find($offer_id);  // search in given table id only
         if (!$offer)
-            return redirect()->back()->with(['error' => __('messages.offer not exist')]);
+            return redirect()->back()->with(['error' => __('العنصر غير موجود')]);
 
         $offer = Offer::select('id', 'name', 'details', 'price','image')->find($offer_id);
 

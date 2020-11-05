@@ -24,7 +24,7 @@
             </div>
     @endif
             <br>
-    <form method="POST" action="{{route('offers.store')}}" >
+    <form method="POST" action="{{route('offers.store')}}" enctype="multipart/form-data" >
 
         @csrf
         <div class="form-group" >
@@ -49,8 +49,8 @@
             @enderror
         </div>
         <div class="form-group">
-            <label for="image">offer image</label>
-            <input type="text" class="form-control" name="image" id="image" placeholder="image">
+            <label for="image">check offer image</label>
+            <input type="file" class="form-control" name="image" id="image" >
             @error('image')
             <small class="form-text text-danger"> {{$message}}</small>
             @enderror

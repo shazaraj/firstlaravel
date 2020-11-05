@@ -22,13 +22,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db01532d-640a-487a-bc72-fd6551be4850" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Traits/OfferTraits.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/incloude/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/incloude/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/OfferRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/OfferRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/messages.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/messages.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/offers/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/offers/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/offers/data.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/offers/data.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/offers/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/offers/update.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,6 +207,7 @@
       <workItem from="1604230589465" duration="74000" />
       <workItem from="1604509767317" duration="11921000" />
       <workItem from="1604578926276" duration="5352000" />
+      <workItem from="1604585763025" duration="6200000" />
     </task>
     <servers />
   </component>
@@ -237,6 +239,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1604230660612" />
+    <state x="518" y="287" key="NewPhpFileDialog" timestamp="1604590410465">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="518" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1604590410465" />
     <state x="184" y="8" key="SettingsEditor" timestamp="1603547210946">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

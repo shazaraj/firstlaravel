@@ -17,4 +17,5 @@ return [
     'offer name unique' => 'name should be unique ',
     'offer price required' => 'price field is required',
     'offer details required' => 'details field is required',
+    'offer image required' => 'should be select an image',
 ];

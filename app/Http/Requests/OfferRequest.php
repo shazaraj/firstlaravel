@@ -38,6 +38,7 @@ class OfferRequest extends FormRequest
             'name.required' => trans('messages.offer name required'),
             'price.required' => trans('messages.offer price required'),
             'details.required' => trans('messages.offer details required'),
+            'image.required' => trans('messages.offer image required'),
         ];
     }
 }
