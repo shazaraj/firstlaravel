@@ -57,6 +57,7 @@ Route::get('/', function () {
         Route::get('delete/{offer_id}', 'CrudController@delete')->name('offers.delete');
 
         Route::get('data','CrudController@getOffers')->name('offers.data');
+      //  Route::get('data/{offer_id}','CrudController@getSelectedOffer')->name('offers.data');
 
 
     });

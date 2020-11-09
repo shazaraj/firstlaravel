@@ -88,6 +88,14 @@ class CrudController extends Controller
 //        return $offers;
     }
 
+//    public function getSelectedOffer($offer_id){
+//
+//        $offer = Offer::find($offer_id);  // search in given table id only
+//        if (!$offer)
+//        { return redirect()->back();}
+//        $offerSelect = Offer::get(['id', 'name', 'details', 'price','image'])->find($offer_id);
+//        return view('offers.data', compact('offerSelect'));
+//    }
 
 
     public function offers(){
