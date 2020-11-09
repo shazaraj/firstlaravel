@@ -76,10 +76,16 @@
         <div class="divider-custom divider-light">
             <div class="divider-custom-line"></div>
             <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            @if (session('adult'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('adult') }}
+                </div>
+            @endif
             <div class="divider-custom-line"></div>
         </div>
     <!-- Masthead Subheading-->
         <p class="masthead-subheading font-weight-light mb-0">Graphic Artist - Web Designer - Android developer</p>
+
     </div>
 </header>
 

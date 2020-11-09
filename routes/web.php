@@ -56,7 +56,39 @@ Route::get('/', function () {
 
         Route::get('delete/{offer_id}', 'CrudController@delete')->name('offers.delete');
 
-        Route::get('data','CrudController@getOffers');
+        Route::get('data','CrudController@getOffers')->name('offers.data');
 
 
     });
+
+    Route::get('video','CrudController@getVideo')->middleware('auth');
+
+
+    ################################### ajax start
+
+Route::group(['prefix' => 'ajaxoffers'],function (){
+
+    Route::post('create','OfferController@create');
+
+    Route::post('store','OfferController@store')->name('ajax.offer.store');
+
+    Route::post('data','OfferController@getdata');
+});
+
+    ################################## end ajax
+
+########################### middleware
+Route::group(['middleware' => 'CheckAge'] ,function (){
+
+    Route::get('adult','Auth\CustomAuthController@adult')->name('adult');
+
+});
+
+Route::get('site','Auth\CustomAuthController@site')->name('site');
+Route::get('admin','Auth\CustomAuthController@admin')->middleware('auth:admin')->name('admin');
+
+Route::get('admin/login','Auth\CustomAuthController@adminLogin')->name('admin.login');
+
+Route::post('admin/login','Auth\CustomAuthController@checkAdminLogin')->name('save.admin.login');
+
+########################### end auth

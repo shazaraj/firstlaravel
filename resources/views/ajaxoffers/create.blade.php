@@ -17,6 +17,7 @@
             <p class="masthead-subheading font-weight-light mb-0">Sales - Shopping - Get Offers</p>
         </div>
     </header>
+@stop
     <body>
     @if(Session::has('create'))
             <div class="alert alert-secondary" role="alert" align="center">
@@ -25,7 +26,7 @@
     @endif
             <br>
     <div class="container">
-    <form method="POST" action="{{route('offers.store')}}" enctype="multipart/form-data" >
+    <form method="POST" id="offerForm" action="" enctype="multipart/form-data" >
 
         @csrf
         <div class="form-group" >
@@ -57,11 +58,41 @@
             @enderror
         </div>
 
-        <button type="submit" class="btn btn-success" align="center">save offer</button>
+        <button id="save" class="btn btn-success">save offer</button>
     </form>
     </div>
     </body>
-
+@section('scripts')
+    <script>
+        $(document).on('click', '#save', function (e) {
+            e.preventDefault();
+            // $('#photo_error').text('');
+            // $('#name_ar_error').text('');
+            // $('#price_error').text('');
+            // $('#details_ar_error').text('');
+            var formData = new FormData($('#offerForm')[0]);
+            $.ajax({
+                type: 'post',
+                enctype: 'multipart/form-data',
+                url: "{{route('ajax.offer.store')}}",
+                data: formData,
+                processData: false,
+                contentType: false,
+                cache: false,
+                success: function (data) {
+                    // if (data.status == true) {
+                    //     $('success').show();
+                    // }
+                }, error: function (reject) {
+                    // var response = $.parseJSON(reject.responseText);
+                    // $.each(response.errors, function (key, val) {
+                    //     $("#" + key + "_error").text(val[0]);
+                    // });
+                }
+            });
+        });
+    </script>
 @stop
+
 
 

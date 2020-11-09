@@ -9,6 +9,7 @@ use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
+use App\Models\Video;
 
 class event
 {
@@ -19,10 +20,13 @@ class event
      *
      * @return void
      */
-    public function __construct()
+
+    public $video;
+    public function __construct(Video $video)
     {
-        //
+      $this-> video = $video;
     }
+
 
     /**
      * Get the channels the event should broadcast on.

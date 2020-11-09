@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\event;
 use App\Http\Requests\OfferRequest;
 use App\Models\Offer;
+use App\Models\Video;
 use App\Traits\OfferTraits;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -107,7 +109,7 @@ class CrudController extends Controller
 
             $offer->update($request->all());
 
-        return redirect('offers/data') ->with(['update' => ' تم التعديل بنجاح']);
+        return redirect()->route('offers.data')->with(['update' => ' تم التعديل بنجاح']);
 
             /*  $offer->update([
                   'name_ar' => $request->name_ar,
@@ -157,5 +159,12 @@ class CrudController extends Controller
             return redirect()
                 ->back()->with(['delete' => __(' تم الحذف بنجاح')]);
 
+    }
+
+    public function getVideo(){
+
+       $video = Video::first();
+       event(new event($video));
+        return view('video')->with('video' , $video);
     }
 }

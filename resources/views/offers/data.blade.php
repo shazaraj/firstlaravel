@@ -20,22 +20,6 @@
 
     <body>
 
-
-
-
-{{--    @if(Session::has('success'))--}}
-
-{{--        <div class="alert alert-success">--}}
-{{--            {{Session::get('success')}}--}}
-{{--        </div>--}}
-{{--    @endif--}}
-
-
-{{--    @if(Session::has('error'))--}}
-{{--        <div class="alert alert-danger">--}}
-{{--            {{Session::get('error')}}--}}
-{{--        </div>--}}
-                    {{--    @endif--}}
             @if(Session::has('create'))
                 <div class="alert alert-secondary" role="alert" align="center">
                     {{Session::get('create')}}
@@ -51,53 +35,82 @@
                     {{Session::get('delete')}}
                 </div>
             @endif
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">#</th>
-           <th scope="col">offer name</th>
-            <th scope="col">offer price</th>
-            <th scope="col">offer details</th>
-            <th scope="col">offer image</th>
-            <th scope="col">operation</th>
-        </tr>
-        </thead>
-        <tbody>
+            @if(Session::has('error'))
+                <div class="alert alert-danger" role="alert" align="center">
+                    {{Session::get('error')}}
+                </div>
+            @endif
+            <br>
 
+<!-- Portfolio Section-->
+<section class="page-section portfolio" id="portfolio">
+    <div class="container">
 
+        <div class="row">
         @foreach($offers as $offer)
-            <tr>
-                <th scope="row">{{$offer->id}}</th>
-                <td>{{$offer->name}}</td>
-                <td>{{$offer->price}}</td>
-                <td>{{$offer->details}}</td>
-                <td><img  style="width: 75px; height: 75px;" src="{{asset('images/offers/'.$offer->image)}}"></td>
+            <!-- Portfolio Item 1-->
+            <div class="col-md-6 col-lg-4 mb-5">
+                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
+                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                        <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                    </div>
+                    <h3>{{$offer->id}}</h3>
+                    <img class="img-fluid" style="width: 150px; height: 150px;" src="{{asset('images/offers/'.$offer->image)}}"alt="" />
+                </div>
+            </div>
+            @endforeach
 
-{{--                <td>--}}
-{{--                    <a href="{{url('offers/edit/'.$offer -> id)}}" class="btn btn-success"> {{__('messages.update')}}</a>--}}
-{{--                    <a href="{{route('offers.delete',$offer -> id)}}" class="btn btn-danger"> {{__('messages.delete')}}</a>--}}
-{{--                </td>--}}
+        </div>
+    </div>
+</section>
+            @foreach($offers as $modelOffer)
+            <div class="modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl" role="document">
+                    <div class="modal-content">
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                        </button>
+                        <div class="modal-body text-center">
+                            <div class="container">
+                                <div class="row justify-content-center">
 
-                <td>
-                    <a href="{{url('offers/edit/'.$offer->id)}}" class="btn btn-success">update</a>
-                    <a href="{{route('offers.delete',$offer->id)}}" class="btn btn-danger">delete</a>
-                </td>
-            </tr>
-        @endforeach
+                                    <div class="col-lg-8">
+                                        <!-- Portfolio Modal - Title-->
+                                        <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal1Label">name : {{$modelOffer->name}}</h2>
+                                        <br>
+                                    <!-- Icon Divider-->
+                                        <div class="divider-custom">
+                                            <div class="divider-custom-line"></div>
+                                            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                            <div class="divider-custom-line"></div>
+                                        </div>
+                                        <!-- Portfolio Modal - Image-->
+                                        <img class="img-fluid rounded mb-5" src="{{asset('images/offers/'.$modelOffer->image)}}" alt="" />
+                                    <!-- Portfolio Modal - Text-->
+                                        <h4 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal1Label"> price : {{$modelOffer->price}}</h4>
+                                        <br>
+                                        <p class="mb-5"> details : {{$modelOffer->details}}</p>
+                                        <button href="{{url('offers/edit/'.$modelOffer->id)}}" class="btn btn-success">
+                                            <i class="fas fa-edit"></i>
+                                            update</button>
+                                        <button href="{{route('offers.delete',$modelOffer->id)}}" class="btn btn-danger">
+                                            <i class="fas fa-trash"></i>
+                                            delete</button>
+                                        <button class="btn btn-primary" data-dismiss="modal">
+                                            <i class="fas fa-times "></i>
+                                            Close</button>
+                                        @endforeach
 
-        </tbody>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-
-
-{{--        @if(Session::has('success'))--}}
-{{--            <div class="alert alert-success" role="alert">--}}
-{{--                {{ Session::get('success') }}--}}
-{{--            </div>--}}
-{{--        @endif--}}
-
-
-    </table>
     </body>
+
 @stop
 
 

@@ -24,7 +24,6 @@
             {{Session::get('update')}}
         </div>
     @endif
-    <div class="container">
     <form method="POST"  action="{{route('offers.update',$offer->id)}}" >
 
         @csrf
@@ -47,7 +46,8 @@
 
         <button type="submit" class="btn btn-primary badge-success" align="center">update offer</button>
     </form>
-      </div>
+
+
     </body>
 
 @stop
